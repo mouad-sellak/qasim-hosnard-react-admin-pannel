@@ -1,9 +1,12 @@
 
 import React, {useEffect} from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import './App.css'
 import {AiFillSetting} from 'react-icons/ai'
 import { TooltipComponent} from '@syncfusion/ej2-react-popups';
+import {Navbar, Footer, Sidebar} from './components';
+import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban,
+Area, Bar, Pie, Financial,Line, Editor } from './pages';
+import './App.css'
 function App() {
   const activeMenu=true
   return (
@@ -25,7 +28,7 @@ function App() {
 
         {activeMenu? (
           <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white" >
-            Sidebar
+            <Sidebar />
           </div>
         ): (
           <div className="w-0 fixed sidebar dark:bg-secondary-dark-bg bg-white" >
@@ -43,24 +46,24 @@ function App() {
         <div>
           <Routes>
             {/* {Dashboard} */}
-            <Route path="/" element="Ecommerce" />
-            <Route path="/ecommerce" element="Ecommerce" />
+            <Route path="/" element={ <Ecommerce/> } />
+            <Route path="/ecommerce" element={<Ecommerce/>} />
             {/* {Pages} */}
-            <Route path="/orders" element="orders" />
-            <Route path="/employees" element="Employees" />
-            <Route path="/customers" element="Customers" />
+            <Route path="/orders" element={<orders/>} />          
+            <Route path="/employees" element={<Employees/>} />
+            <Route path="/customers" element={<Customers/>} />
              {/* {Apps} */}
-             <Route path="/editor" element="Editor" />
-            <Route path="/calender" element="Calendar" />
+             <Route path="/editor" element={<Editor/> } />        
+             <Route path="/calender" element={<Calendar/> } />
              {/* {Charts} */}
-             <Route path="/line" element="Line" />
-             <Route path="/area" element="Area" />
-             <Route path="/bar" element="Bar" />
-             <Route path="/pie" element="Pie" />
-             <Route path="financial" element="Financial" />
-             <Route path="/color-mapping" element="ColorMabing" />
-             <Route path="/pyramid" element="Pyramid" />
-            <Route path="/stacked" element="Stacked" />
+
+             <Route path="/line" element={<Line/>} />        
+             <Route path="/area" element={<Area/>} />           
+             <Route path="/bar" element={<Bar/>} />       
+             <Route path="/pie" element={<Pie/>} />        
+             <Route path="financial" element={<Financial/>} />
+             <Route path="/pyramid" element={ <Pyramid/>} />
+            <Route path="/stacked" element={<Stacked/> } />
           </Routes>
         </div>
       </div>

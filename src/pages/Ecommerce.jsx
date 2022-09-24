@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Ecommerce() {
+const Ecommerce = () => {
   return (
     <div>Ecommerce</div>
   )
